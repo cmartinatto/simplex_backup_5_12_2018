@@ -1,0 +1,248 @@
+Stuff Done
+Semana del 03/12
+--------------- Lunes ---------------
+
+hace la lista de cosas por hacer para crear tickets
+
+-------------- Martes ---------------
+
+hace la lista de cosas por hacer para crear tickets
+
+------------- Miercoles -------------
+
+
+
+-------------- Jueves ---------------
+
+
+
+-------------- Viernes --------------
+
+
+
+*********************************************************************************************************
+*********************************************************************************************************
+*********************************************************************************************************
+TODO:
+
+Los tickets que les vayan llegando del equipo de Pit People siempre tienen prioridad. Vayan coordinando con Agus como se dividen ese trabajo, o si los resuelven juntos asi no es mucha carga para ninguno de los dos.
+
+Despues si por ahora no tienen tickets, me gustaria que se centren en armar los test cases que faltan para las suites en test rail para los tres sitios, Agus armo un ticket en el backlog de QA para el Wax Explorer por ejemplo, estaria bueno que lo vayas viendo con el
+
+ver de encarar el framework
+
+
+
+--------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
+NOTAS:
+
+
+
+
+
+-----------
+log de proyectos de intellij
+- abcd tiene cucumber, mvn y selenium. tiene hecha una prueba que abre chrome y busca algo en google
+
+- linkedintutorial2/serenitycucumberselenium tiene cucumber, mvn, selenium y serenity. tiene una prueba que abre el firefox de intellij y entonces no hace mas nada. genera reportes de serenity.
+
+- nov22b es una mezcla de los dos anteriores. incluye cucumber, mvn, serenity y selenium. esta creado con el siguiente comando:
+mvn archetype:generate -DarchetypeGroupId=io.cucumber -DarchetypeArtifactId=cucumber-archetype -DarchetypeVersion=2.3.1.2 -DgroupId=nov22b -DartifactId=nov22b -Dpackage=nov22b -Dversion=1.0.0-SNAPSHOT -DinteractiveMode=false
+lo que tiene esto es que no parece estar usando serenity para nada. para empezar, no genera los reportes de serenity
+
+- serenity-cucumber-starter es un proyecto clonado del repo de algun fulano
+https://github.com/serenity-bdd/serenity-cucumber-starter/blob/master/README.md
+
+
+segun parece, serenity te ofrece
+	integracion con selenium
+	living documentation
+	reportes
+
+selenium lo manejas
+living documentation?
+reportes? te bajas alguna otra herramienta de reportes
+
+conclusion: avanza con cucumber y selenium (lo cual ya tenes andando) y mostrales algo de progreso. ellos no te conocen y no saben si servis siquiera para esto. demostrales primero que podes hacer algo y despues tomate el tiempo de integrar serenity si realmente vale la pena.
+
+lo que necesitas y no tenes aun es:
+	reportes lindos
+	multithreading
+	subir el codigo a gitlab
+	ejecutar desde jenkins
+
+
+
+
+-----------
+van a tener una libreria con usuarios definidos por ambiente
+
+libreria sloth, tiene logger copado. fiajte de implementarlo
+
+log reporter, en sloth. consola y jenkins. tambien lo sube a google drive
+
+pupi te puede ayudar con el tema de jenkins
+
+
+jenkins
+
+-----------
+
+
+
+
+todos los branch salen de master
+ver de hacerlo con multithreading
+
+
+fijate que hay un pibe que dijo que esta usando cucumber, preguntale a fer como se llama
+
+
+
+
+
+
+$ cd /path/to/install/to
+$ git clone ssh://git@monica.mcmxi.services:2259/vgo/www.git
+$ cd www
+
+
+monica.mcmxi.services:2259/opskins/opskins-www
+
+
+documentacion
+https://wiki.mcmxi.services/display/QT/QA+Team
+https://monica.mcmxi.services/quality-assurance
+
+framework apis
+https://monica.mcmxi.services/quality-assurance/wax-api-qa-framework
+https://monica.mcmxi.services/quality-assurance/wax-api-qa-framework
+git clone ssh://git@monica.mcmxi.services:2259/quality-assurance/dodo.git
+
+
+--------------------------------------------------------------------------------------------------------
+browsers a soportar
+1) chrome
+2) firefox
+3) IE (si da el tiempo, baja prioridad)
+
+james, on IE:
+on opskins specifically we try to avoid ES6 features that would render the site unusable in IE<9, but Trade and WAX Explorer are both using React with Webpack so we don't have those restrictions
+
+since opskins doesn't have any sort of front-end build utility (like webpack), we keep it old school for now
+
+https://chromedriver.storage.googleapis.com/index.html?path=2.43/
+--------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
+** Instalacion de Docker **
+https://wiki.mcmxi.services/display/KB/Docker
+se instala en
+/var/lib/docker
+
+** Links de paginas de prueba **
+https://onetruestage.com/ (es el opskins.com de staging)
+https://staging.vcase.gg/
+https://staging-explorer.wax.io/
+https://staging.wax.io/
+
+** sitios **
+Wax Express Trade
+OpSkins
+Wax Explorer
+
+** repos a pedir permisos **
+opskins.com
+trade.opskins.com
+wax express trade
+
+** testrail **
+En OpSkins = Frontend y Wax Express Trade - Frontend vas a encontrar los Critical Path que armo Agus
+https://ops.testrail.io/index.php?/suites/view/54&group_by=cases:section_id&group_order=asc
+
+** General Knowledge **
+
+OSI = Opskins inventory
+the inventory is called WET inventory en Wax Express Trade. Guess why.
+
+** sprint dashboard - jira **
+https://jira.mcmxi.services/secure/RapidBoard.jspa?rapidView=86&view=detail&selectedIssue=WE-70
+
+** tutorial de DBs **
+https://wiki.mcmxi.services/display/QT/Accessing+the+Staging+Database
+
+** Opskins manager **
+Lukas Sliwka
+
+
+
+08109992424
+
+
+GIT
+
+git add README.md
+git commit -m "add README"
+git push -u origin master
+
+
+
+
+
+
+
+para cambiar a que branch apunta staging
+http://onetruestage.com/pullmeplz.php?branch=
+mas el branch.
+por ejemplo, si queres que apunte a master
+http://onetruestage.com/pullmeplz.php?branch=master
+si queres que apunte a OPSKINS-1091/irl-homepage-prep
+http://onetruestage.com/pullmeplz.php?branch=OPSKINS-1091/irl-homepage-prep
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://opskins.com/
+user cam18
+pass Bruna2018
+
+Test Rail
+mail
+Bruna2018
+
+ssh key pair
+pass phrase: Bruna2018
+SHA256:YJQYLS1cI0Fs+Jh6trNbNndfFSPGJi7QCjz/r/teN3k carlos.martinatto@opskins.com
++---[RSA 4096]----+
+|   ==B+.         |
+|  ..Bo+o   .     |
+|   =+o+ . . = o  |
+|  o .= + . + . o |
+| .    o S .   .  |
+|. o    . .   . . |
+| o .+ . o   o + E|
+|  oo o . o o . o |
+|  o+    o==      |
++----[SHA256]-----+

@@ -1,0 +1,45 @@
+-------------------------------------------------------------------------------
+Test set: com.opskins.feautomation.RunCucumberTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.125 sec <<< FAILURE!
+initializationError(com.opskins.feautomation.RunCucumberTest)  Time elapsed: 0.007 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: java/sql/Time
+	at gherkin.deps.com.google.gson.Gson.<init>(Gson.java:232)
+	at gherkin.deps.com.google.gson.Gson.<init>(Gson.java:176)
+	at gherkin.GherkinDialectProvider.<clinit>(GherkinDialectProvider.java:21)
+	at gherkin.TokenMatcher.<init>(TokenMatcher.java:25)
+	at cucumber.runtime.model.FeatureBuilder.parse(FeatureBuilder.java:54)
+	at cucumber.runtime.model.FeatureLoader.loadFromFeaturePath(FeatureLoader.java:113)
+	at cucumber.runtime.model.FeatureLoader.load(FeatureLoader.java:48)
+	at cucumber.runtime.model.FeatureLoader.load(FeatureLoader.java:30)
+	at cucumber.runtime.FeaturePathFeatureSupplier.get(FeaturePathFeatureSupplier.java:22)
+	at cucumber.api.junit.Cucumber.<init>(Cucumber.java:90)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:488)
+	at org.junit.internal.builders.AnnotatedBuilder.buildRunner(AnnotatedBuilder.java:104)
+	at org.junit.internal.builders.AnnotatedBuilder.runnerForClass(AnnotatedBuilder.java:86)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)
+	at org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:26)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)
+	at org.junit.internal.requests.ClassRequest.getRunner(ClassRequest.java:33)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:250)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.lang.ClassNotFoundException: java.sql.Time
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:466)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:566)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:499)
+	at org.apache.maven.surefire.booter.IsolatedClassLoader.loadClass(IsolatedClassLoader.java:97)
+	... 32 more
+

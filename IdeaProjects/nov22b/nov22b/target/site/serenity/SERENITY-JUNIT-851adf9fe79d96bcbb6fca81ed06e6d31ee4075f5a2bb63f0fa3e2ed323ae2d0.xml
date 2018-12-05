@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="3" failures="0" name="Customer search for stock price" skipped="0" tests="3" time="1.2" timestamp="2018-11-22T16:13:10.256959-03:00[America/Argentina/Buenos_Aires]"><testcase name="Search and add to cart"><error message="Could not instantiate new WebDriver instance of type class org.openqa.selenium.firefox.FirefoxDriver (Failed to connect to binary FirefoxBinary(/usr/bin/firefox) on port 7055; process output follows: &#10;null&#10;Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'&#10;System info: host: 'simplex-MAX-G0101', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-36-generic', java.version: '10.0.2'&#10;Driver info: driver.version: FirefoxDriver" type="net.thucydides.core.webdriver.UnsupportedDriverException">Could not instantiate new WebDriver instance of type class org.openqa.selenium.firefox.FirefoxDriver (Failed to connect to binary FirefoxBinary(/usr/bin/firefox) on port 7055; process output follows: 
+null
+Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
+System info: host: 'simplex-MAX-G0101', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-36-generic', java.version: '10.0.2'
+Driver info: driver.version: FirefoxDriver</error><system-err>Could not instantiate new WebDriver instance of type class org.openqa.selenium.firefox.FirefoxDriver (Failed to connect to binary FirefoxBinary(/usr/bin/firefox) on port 7055; process output follows: 
+null
+Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
+System info: host: 'simplex-MAX-G0101', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-36-generic', java.version: '10.0.2'
+Driver info: driver.version: FirefoxDriver
+nov22b.pages.SearchPage.openSearchPage(SearchPage.java:16)
+nov22b.steps.UserSteps.open_google_page(UserSteps.java:14)
+nov22b.stepDefinition.StepDefinition.i_am_on_the_Google_search_page(StepDefinition.java:24)
+java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+</system-err></testcase></testsuite>

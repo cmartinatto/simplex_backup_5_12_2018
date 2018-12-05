@@ -1,0 +1,148 @@
+Pasos seguidos en la instalacion de docker
+
+1) Deleted "docker-env", "opskins-www" and "www" from "repos" directory
+
+2) Desinstalar Docker
+	sudo apt-get remove docker docker-engine docker.io
+	sudo apt-get remove docker docker-engine docker-ce docker.io
+	sudo apt-get purge docker-ce
+	sudo apt-get purge docker.io
+	sudo rm -rf /var/lib/docker
+	sudo apt-get purge -y docker-engine docker docker.io docker-ce  
+	sudo apt-get autoremove -y --purge docker-engine docker docker.io docker-ce
+	(Las ultimas funcionaron, pero hacelas todas por las dudas)
+
+3) Desinstalar Docker-compose
+	sudo rm /usr/local/bin/docker-compose
+	pip uninstall docker-compose
+
+4) update the apt package index
+	sudo apt-get update
+
+5) Install packages to allow apt to use a repository over HTTPS:
+	sudo apt-get install \
+	apt-transport-https \
+	ca-certificates \
+	curl \
+	software-properties-common
+
+6) Add Docker’s official GPG key:
+	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+7) Verify that you now have the key with the fingerprint 9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88, by searching for the last 8 characters of the fingerprint.
+	sudo apt-key fingerprint 0EBFCD88
+
+8) Set up stable repository
+	sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+
+9) update the apt package index
+	sudo apt-get update
+
+10) Install the latest version of Docker CE
+	sudo apt-get install docker-ce
+
+11) Verify that Docker CE is installed correctly by running the hello-world image
+	sudo docker run hello-world
+
+12) Create the docker group
+	sudo groupadd docker
+
+13) Add your user to the docker group
+	sudo usermod -aG docker $USER
+
+14) Log out and log in
+
+15) Verify that you can run docker commands without sudo (See step 10)
+	docker run hello-world
+
+16) Configure Docker to start on boot
+	sudo systemctl enable docker
+
+17) Download the latest version of Docker Compose
+	sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+18) Apply executable permissions to the binary
+	sudo chmod +x /usr/local/bin/docker-compose
+
+19) Test the installation
+	docker-compose --version
+
+(make sure ssh key is set up in gitlab)
+
+20) Git Pull the Base Docker Project
+	cd /path/to/install/to (Documents/repos)
+	git clone ssh://git@monica.mcmxi.services:2259/quality-assurance/docker-env.git
+	cd docker-env
+
+(To install opskins)
+
+21) Clone opskins repo
+	cd /path/to/install/to
+	git clone ssh://git@monica.mcmxi.services:2259/opskins/opskins-www.git
+	cd opskins-www
+
+22) Enable redis for your local client
+	git clone https://github.com/nrk/predis.git
+
+23) Change Directory into your new docker-env directory
+	cd ~/Documents/repos/docker-env/
+
+24) Create a symlink from your local project to the code folder
+	ln -s ~/Documents/repos/opskins-www code/
+
+25) Copy over the AppConfig.php file from the docker-env/config/opskins/AppConfig.php into the opskins project
+	cp config/opskins/AppConfig.php code/opskins-www/Core/App/
+
+26) Run the make commands to create dependencies
+	make dependencies
+
+27) make sure you are on master branch
+	git status
+
+28) Run php's composer to download php dependencies and update the newly installed myself database
+	make opskins
+
+	//---------------------------------------------------------------------------
+	WARNING: Found orphan containers (opskins, opskins.db, opskins.redis) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up.
+
+	[RuntimeException]                                             
+  	/var/www/html/vendor does not exist and could not be created. 
+	//---------------------------------------------------------------------------
+
+(opskins installation paused, to instal trade-opskins)
+
+29) go to main repo folder
+	cd ~/Documents/repos/
+
+30) Clone the trade.opskins.com repository
+	cd /path/to/install/to
+	git clone ssh://git@monica.mcmxi.services:2259/vgo/www.git
+	cd www
+
+31) Change Directory into your new docker-env directory
+	cd ~/Documents/repos/docker-env/
+
+32) Create a symlink from your local project to the code folder
+	ln -s ~/Documents/repos/www code/
+
+33) Copy over the AppConfig.php file from the docker-env/config/vgo-trade/AppConfig.php into the trade.opskins project
+	cp config/vgo-trade/AppConfig.php code/www/Core/App/
+
+34) make sure you are on master branch
+	git status
+
+35) Run php's composer to download php dependencies, update the newly installed myself database and install the seed data and build front-end
+	make trade
+
+	//---------------------------------------------------------------------------
+	WARNING: Found orphan containers (opskins, opskins.db, opskins.redis) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up.
+
+	[RuntimeException]                                             
+  	/var/www/html/vendor does not exist and could not be created. 
+	//---------------------------------------------------------------------------
+
+36) Retry las step with root access
+	sudo make trade
